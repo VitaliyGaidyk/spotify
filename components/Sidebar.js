@@ -4,6 +4,7 @@ import {useSession} from "next-auth/react";
 import useSpotify from "../hooks/useSpotify";
 import Playlist from "./Playlist";
 import Line from "./Line";
+import Logo from "./logo/Logo";
 
 const Sidebar = () => {
     const spotifyApi = useSpotify()
@@ -24,6 +25,9 @@ const Sidebar = () => {
             hidden md:inline-flex pb-36'
         >
             <div className="space-y-4">
+                <div className='mb-8'>
+                    <Logo id="logo"/>
+                </div>
                 <SidebarButton id="home"/>
                 <SidebarButton id="search"/>
                 <SidebarButton id="library"/>
