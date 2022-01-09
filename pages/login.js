@@ -6,9 +6,11 @@ const Login = ({providers}) => {
             <img className="w-52 mb-5" src="https://i.imgur.com/fPuEa9V.png" alt=""/>
             {Object.values(providers).map((provider) => (
                 <div key={provider.name}>
-                    <button onClick={() => signIn(provider.id, {callbackUrl: "/"})}
-                            className="bg-[#18D860] text-white p-5 rounded-lg">
+                    <button className="bg-[#18D860] text-white p-5 rounded-lg"
+                            onClick={() => signIn(provider.id, {callbackUrl: '/'})}
+                    >
                         Login with {provider.name}
+                        {console.log(provider)}
                     </button>
                 </div>
             ))}
@@ -23,7 +25,7 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            providers
-        }
+            providers,
+        },
     }
 }
