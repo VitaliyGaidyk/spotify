@@ -4,7 +4,7 @@ import {useSession} from "next-auth/react";
 import useSpotify from "../hooks/useSpotify";
 import Playlist from "./Playlist";
 import Line from "./Line";
-import Logo from "./logo/Logo";
+import Logo from "./Logo";
 
 const Sidebar = () => {
     const spotifyApi = useSpotify()
