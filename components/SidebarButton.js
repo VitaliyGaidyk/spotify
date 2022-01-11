@@ -3,29 +3,37 @@ import
     HeartIcon, HomeIcon, LibraryIcon, PlusCircleIcon, RssIcon, SearchIcon
 } from "@heroicons/react/outline";
 import {signOut} from "next-auth/react";
+import Link from 'next/link'
 
 const SidebarButton = ({id}) => {
     switch (id) {
         case 'home':
             return (
-                <button className="flex items-center space-x-2 hover:text-white">
-                    <HomeIcon className="h-5 w-5"/>
-                    <p>Home</p>
-                </button>
+                <Link href='/'>
+                    <button className="flex items-center space-x-2 hover:text-white">
+                        <HomeIcon className="h-5 w-5"/>
+                        <p>Home</p>
+                    </button>
+                </Link>
             )
         case 'search':
             return (
-                <button className="flex items-center space-x-2 hover:text-white">
-                    <SearchIcon className="h-5 w-5"/>
-                    <p>Search</p>
-                </button>
+                <Link href="/search">
+                    <button className="flex items-center space-x-2 hover:text-white">
+                        <SearchIcon className="h-5 w-5"/>
+                        <p>Search</p>
+                    </button>
+                </Link>
             )
         case 'library':
             return (
-                <button className="flex items-center space-x-2 hover:text-white">
-                    <LibraryIcon className="h-5 w-5"/>
-                    <p>Your library</p>
-                </button>
+                <Link href="/library">
+                    <button className="flex items-center space-x-2 hover:text-white">
+                        <LibraryIcon className="h-5 w-5"/>
+                        <p>Your library</p>
+                    </button>
+                </Link>
+
             )
         case 'playlist':
             return (
