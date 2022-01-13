@@ -5,7 +5,7 @@ const Search = () => {
     return (
         <>
             <Layout title='Search'>
-                SEARCH
+                search
             </Layout>
         </>
 
