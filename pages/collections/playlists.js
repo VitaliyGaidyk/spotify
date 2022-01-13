@@ -4,10 +4,7 @@ import Layout from "../../layouts/Layout";
 const Playlists = () => {
 
     return (
-       <Layout>
-           <Head>
-               <title>Spotify - Library</title>
-           </Head>
+       <Layout title='Library'>
            LIBRARY
        </Layout>
     );

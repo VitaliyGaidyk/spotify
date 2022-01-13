@@ -1,9 +1,14 @@
 import Sidebar from "../components/Sidebar";
 import Player from "../components/Player";
+import Head from "next/head";
 
- const Layout = ({children}) => {
+const Layout = ({children, title = 'App'}) => {
 
-     return (
+    return (
+        <>
+            <Head>
+                <title>Spotify - {title} </title>
+            </Head>
             <div className="bg-black h-screen overflow-hidden">
                 <main className='flex'>
                     <Sidebar/>
@@ -11,9 +16,11 @@ import Player from "../components/Player";
                 </main>
 
                 <div className='sticky bottom-0'>
-                    <Player />
+                    <Player/>
                 </div>
             </div>
+        </>
+
     );
 };
 export default Layout
