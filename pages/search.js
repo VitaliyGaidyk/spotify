@@ -1,5 +1,4 @@
 import Layout from "../layouts/Layout";
-import Head from "next/head";
 
 const Search = () => {
     return (
