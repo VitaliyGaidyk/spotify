@@ -22,9 +22,6 @@ const ErrorPage = () => {
                     </button>
                 </Link>
             </div>
-            <div>
-
-            </div>
         </section>
     );
 };
