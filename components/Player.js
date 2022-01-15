@@ -21,13 +21,13 @@ const Player = () => {
     const {data: session, status} = useSession()
     const [currentTrackId, setCurrentTrackId] = useRecoilState(currentTrackIdState)
     const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
-    const [volume, setVolume] = useState([50])
+    const [volume, setVolume] = useState([10])
     const songInfo = useSongInfo()
 
     const fetchCurrentSong = () => {
         if (!songInfo) {
             spotifyApi.getMyCurrentPlayingTrack().then(data => {
-                console.log('now', data.body?.item)
+                console.log('now playing', data.body?.item)
                 setCurrentTrackId(data.body?.item?.id)
 
                 spotifyApi.getMyCurrentPlaybackState().then((data) => {
@@ -52,7 +52,7 @@ const Player = () => {
     useEffect(() => {
         if (spotifyApi.getAccessToken() && !currentTrackId) {
             fetchCurrentSong()
-            setVolume(50)
+            setVolume(10)
         }
     }, [currentTrackIdState, spotifyApi, session])
 
@@ -64,8 +64,9 @@ const Player = () => {
 
     const debouncedAdjustVolume = useCallback(
         debounce((volume) => {
-            spotifyApi.setVolume(volume).catch((err) => {})
-        }, 500),[]
+            spotifyApi.setVolume(volume).catch((err)=>{})
+        }, 500),
+        []
     )
 
     return (
@@ -97,8 +98,10 @@ const Player = () => {
                 <input className="w-14 md:w-28"
                        type="range"
                        value={volume}
-                       onChange={event => setVolume(Number(event.target.value))}
-                       min={0} max={100}/>
+                       onChange={e => setVolume(Number(e.target.value))}
+                       min={0}
+                       max={100}
+                />
                 <VolumeUpIcon onClick={() => volume < 100 && setVolume(volume + 10)}
                               className="button"/>
             </div>

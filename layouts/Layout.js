@@ -5,22 +5,18 @@ import Head from "next/head";
 const Layout = ({children, title = 'App'}) => {
 
     return (
-        <>
+        <div className="bg-black h-screen overflow-hidden">
             <Head>
-                <title>Spotify - {title} </title>
+                <title>Spotify - {title}</title>
             </Head>
-            <div className="bg-black h-screen overflow-hidden">
-                <main className='flex'>
-                    <Sidebar/>
-                    {children}
-                </main>
-
-                <div className='sticky bottom-0'>
-                    <Player/>
-                </div>
+            <main className='flex'>
+                <Sidebar/>
+                {children}
+            </main>
+            <div className='sticky bottom-0 z-4'>
+                <Player/>
             </div>
-        </>
-
+        </div>
     );
 };
 export default Layout
