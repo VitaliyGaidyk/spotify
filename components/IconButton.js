@@ -10,7 +10,7 @@ import
 import {signOut} from "next-auth/react";
 import Link from 'next/link'
 
-const SidebarButton = ({id}) => {
+const IconButton = ({id}) => {
     switch (id) {
         case 'home':
             return (
@@ -90,4 +90,4 @@ const SidebarButton = ({id}) => {
     }
 };
 
-export default SidebarButton;
+export default IconButton;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import SidebarButton from "./SidebarButton";
+import IconButton from "./IconButton";
 import {useSession} from "next-auth/react";
 import useSpotify from "../hooks/useSpotify";
 import Playlist from "./Playlist";
@@ -28,13 +28,13 @@ const Sidebar = () => {
                 <div className='mb-8'>
                     <Logo id="logo"/>
                 </div>
-                <SidebarButton id="home"/>
-                <SidebarButton id="search"/>
-                <SidebarButton id="library"/>
+                <IconButton id="home"/>
+                <IconButton id="search"/>
+                <IconButton id="library"/>
                 <Line/>
-                <SidebarButton id="playlist"/>
-                <SidebarButton id="heart"/>
-                <SidebarButton id="rss"/>
+                <IconButton id="playlist"/>
+                <IconButton id="heart"/>
+                <IconButton id="rss"/>
                 <Line/>
                 <Playlist playlists={playlists}/>
             </div>
