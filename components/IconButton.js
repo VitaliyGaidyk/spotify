@@ -32,7 +32,7 @@ const IconButton = ({id}) => {
             )
         case 'library':
             return (
-                <Link href="/collections/playlists">
+                <Link href="/library">
                     <button className="flex items-center space-x-2 hover:text-white">
                         <LibraryIcon className="h-5 w-5"/>
                         <p>Your library</p>

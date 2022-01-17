@@ -5,19 +5,10 @@ import useSpotify from "../hooks/useSpotify";
 import Playlist from "./Playlist";
 import Line from "./Line";
 import Logo from "./Logo";
+import usePlaylist from "../hooks/usePlaylist";
 
 const Sidebar = () => {
-    const spotifyApi = useSpotify()
-    const {data: session, status} = useSession()
-    const [playlists, setPlaylists] = useState([])
-
-    useEffect(() => {
-        if (spotifyApi.getAccessToken()) {
-            spotifyApi.getUserPlaylists().then((data) => {
-                setPlaylists(data.body.items)
-            })
-        }
-    }, [session, spotifyApi])
+    const playlist = usePlaylist()
 
     return (
         <div className='text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900
@@ -36,7 +27,7 @@ const Sidebar = () => {
                 <IconButton id="heart"/>
                 <IconButton id="rss"/>
                 <Line/>
-                <Playlist playlists={playlists}/>
+                <Playlist playlists={playlist}/>
             </div>
         </div>
     );

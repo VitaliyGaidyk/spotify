@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {playlistIdState} from "../atoms/playlistAtom";
 import {useRecoilState} from "recoil";
 
@@ -8,7 +7,9 @@ const Playlist = ({playlists}) => {
     return (
         <>
             {playlists.map((playlist) => (
-                <p key={playlist.id} onClick={() => setPlaylistsId(playlist.id)} className="cursor-pointer hover:text-white">
+                <p key={playlist.id}
+                   onClick={() => setPlaylistsId(playlist.id)}
+                   className="cursor-pointer hover:text-white">
                     {playlist.name}
                 </p>
             ))}
