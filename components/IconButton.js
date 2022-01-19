@@ -35,7 +35,7 @@ const IconButton = ({id}) => {
                 <Link href="/library">
                     <button className="flex items-center space-x-2 hover:text-white">
                         <LibraryIcon className="h-5 w-5"/>
-                        <p>Your library</p>
+                        <p>library</p>
                     </button>
                 </Link>
 
@@ -58,7 +58,7 @@ const IconButton = ({id}) => {
             return (
                 <button className="flex items-center space-x-2 hover:text-white">
                     <RssIcon className="h-5 w-5"/>
-                    <p>Your Episodes</p>
+                    <p>Episodes</p>
                 </button>
             )
         case 'logout':
