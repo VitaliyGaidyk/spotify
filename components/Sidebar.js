@@ -1,7 +1,4 @@
-import React, {useEffect, useState} from 'react';
 import IconButton from "./IconButton";
-import {useSession} from "next-auth/react";
-import useSpotify from "../hooks/useSpotify";
 import Playlist from "./Playlist";
 import Line from "./Line";
 import Logo from "./Logo";
