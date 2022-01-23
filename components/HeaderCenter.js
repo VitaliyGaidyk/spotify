@@ -46,9 +46,13 @@ const HeaderCenter = () => {
                 <img className='h-44 w-44 shadow-2xl'
                      src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png" alt=""/>
                 <div>
+                    <p>Playlist</p>
                     <h1 className='text-2xl mb:text-3xl xl:text-5xl font-bold'>
                         Liked Songs
                     </h1>
+                    <p className='mt-3'>
+                        {session?.user.name}
+                    </p>
                 </div>
             </section>
         </>

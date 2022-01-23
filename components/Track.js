@@ -17,7 +17,7 @@ const Track = ({order, track}) => {
     }
 
     return (
-        <div className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900'
+        <div className='grid grid-cols-2 text-gray-500 py-4 pl-5 pr-7 hover:bg-gray-900'
              onClick={playSong}
         >
             <div className="flex items-center space-x-4 rounded-lg cursor-pointer">
