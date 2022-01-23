@@ -49,10 +49,12 @@ const IconButton = ({id}) => {
             )
         case 'heart':
             return (
-                <button className="flex items-center space-x-2 hover:text-white">
-                    <HeartIcon className="h-5 w-5"/>
-                    <p>Liked Songs</p>
-                </button>
+                <Link href="/tracks">
+                    <button className="flex items-center space-x-2 hover:text-white">
+                        <HeartIcon className="h-5 w-5"/>
+                        <p>Liked Songs</p>
+                    </button>
+                </Link>
             )
         case 'rss':
             return (
