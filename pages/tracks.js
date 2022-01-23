@@ -6,7 +6,7 @@ import {useRecoilState, useRecoilValue} from "recoil";
 import {trackState} from "../atoms/trackAtom";
 import {useEffect} from "react";
 import Track from "../components/Track";
-import Line from "../components/Line";
+import HeaderSongs from "../components/HeaderSongs";
 
 const LikedSongs = () => {
     const spotifyApi = useSpotify()
@@ -29,14 +29,9 @@ const LikedSongs = () => {
         <Layout title='Tracks'>
             <div className='flex-grow h-screen overflow-y-scroll scrollbar-hide'>
                 <HeaderCenter/>
-                <div className='grid grid-cols-4 grid-rows-2 text-gray-500  pl-5 pr-10'>
-                        <span  className='col-end-1'>#</span>
-                        <p className='ml-5'>Title</p>
-                        <p className='col-start-3'>Album</p>
-                        <p className='text-right'>Time</p>
-                </div>
+                <HeaderSongs/>
                 {trackList?.items.map((track, index) => (
-                    <Track key={index} track={track} order={index}/>
+                    <Track key={track.track.id} track={track} order={index}/>
                 ))}
             </div>
         </Layout>

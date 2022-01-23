@@ -7,7 +7,7 @@ import {trackIdState, trackState} from "../atoms/trackAtom";
 import useSpotify from "../hooks/useSpotify";
 
 const colors = [
-    "from-purple-500",
+    "from-indigo-500",
 ]
 
 const HeaderCenter = () => {

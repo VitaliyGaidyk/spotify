@@ -8,7 +8,7 @@ const Sidebar = () => {
     const playlist = usePlaylist()
 
     return (
-        <div className='text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900
+        <div className='text-gray-500 p-5 text-xs lg:text-sm border-gray-900
             overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] w-1/3
             hidden md:inline-flex pb-36 md:text-xs'
         >
