@@ -28,10 +28,13 @@ const LikedSongs = () => {
     return (
         <Layout title='Tracks'>
             <div className='flex-grow h-screen overflow-y-scroll scrollbar-hide'>
-                <HeaderCenter/>
+                <HeaderCenter title='Liked Songs' colors='from-indigo-500' image={true}/>
                 <HeaderSongs/>
                 {trackList?.items.map((track, index) => (
-                    <Track key={track.track.id} track={track} order={index}/>
+                    <Track key={track.track.id}
+                           track={track}
+                           order={index}
+                    />
                 ))}
             </div>
         </Layout>

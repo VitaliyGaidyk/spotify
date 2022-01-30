@@ -1,10 +1,11 @@
 import Layout from "../layouts/Layout";
 import usePlaylist from "../hooks/usePlaylist";
-import {useRecoilState, useRecoilValue} from "recoil";
+import {useRecoilState} from "recoil";
 import {playlistIdState, playlistState} from "../atoms/playlistAtom";
 import {useEffect} from "react";
 import useSpotify from "../hooks/useSpotify";
 import Songs from "../components/Songs";
+import HeaderSongs from "../components/HeaderSongs";
 
 const Library = () => {
     const spotifyApi = useSpotify()
@@ -42,6 +43,7 @@ const Library = () => {
                         </div>
                     ))}
                 </div>
+                <HeaderSongs/>
                 <Songs/>
             </div>
         </Layout>

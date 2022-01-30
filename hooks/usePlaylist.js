@@ -9,9 +9,10 @@ const usePlaylist = () => {
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {
-            spotifyApi.getUserPlaylists().then((data) => {
-                setPlaylists(data.body.items)
-            })
+            spotifyApi.getUserPlaylists()
+                .then((data) => {
+                    setPlaylists(data.body.items)
+                })
         }
     }, [session, spotifyApi])
 

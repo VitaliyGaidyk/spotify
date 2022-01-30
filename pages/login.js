@@ -10,7 +10,6 @@ const Login = ({providers}) => {
                             onClick={() => signIn(provider.id, {callbackUrl: '/'})}
                     >
                         Login with {provider.name}
-                        {console.log(provider)}
                     </button>
                 </div>
             ))}

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import IconButton from "../components/IconButton";
+import {Images} from "../components/Images";
 
 const ErrorPage = () => {
     return (
@@ -8,7 +8,7 @@ const ErrorPage = () => {
                 <title>Page not found</title>
             </head>
             <div className='flex flex-col items-center min-h-screen w-full justify-center '>
-                <IconButton id='404'/>
+                <Images id='404'/>
                 <h1 className='text-5xl	font-bold mt-8 mb-5'>Page not found</h1>
                 <p className='mb-4'>We can’t seem to find the page you are looking for.</p>
                 <Link href='/'>
