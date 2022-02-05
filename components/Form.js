@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import IconButton from "./IconButton";
 import useSpotify from "../hooks/useSpotify";
 import {useRecoilState} from "recoil";
@@ -30,7 +30,6 @@ const Form = () => {
             <input className='h-10 w-[370px] rounded-full focus:outline-none py-3 pl-9 pr-3'
                    placeholder="Artists, song, or podcasts..."
                    type="text"
-                   value={value}
                    onChange={event => setValue(event.target.value)}
             />
         </form>
