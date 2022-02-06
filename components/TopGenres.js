@@ -9,7 +9,7 @@ const TopGenres = () => {
     const spotifyApi = useSpotify()
     const {data: session, status} = useSession()
     const [playlist, setPlaylist] = useState([])
-    console.log(playlist)
+    // console.log(playlist)
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {

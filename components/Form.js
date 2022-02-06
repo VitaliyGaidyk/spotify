@@ -12,15 +12,19 @@ const Form = () => {
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {
-            spotifyApi.searchTracks(value, {limit: 10})
-                .then(
-                    (data) => {
-                        setSearch(data.body)
-                    },
-                    (err) => {
-                        console.error(err)
-                    }
-                )
+            if (value) {
+                spotifyApi.searchTracks(value, {limit: 4})
+                    .then(
+                        (data) => {
+                            setSearch(data.body)
+                        },
+                        (err) => {
+                            console.error(err)
+                        }
+                    )
+            } else {
+                setSearch('')
+            }
         }
     }, [value])
 
