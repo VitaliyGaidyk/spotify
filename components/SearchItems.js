@@ -4,9 +4,11 @@ import SearchItem from "./SearchItem";
 
 const SearchItems = () => {
     const searchItem = useRecoilValue(formState)
-    console.log(searchItem)
+
+    // console.log(searchItem)
+
     return (
-        <div>
+        <div className='grid grid-rows-1 grid-cols-4 gap-10 w-full'>
             {searchItem.tracks?.items.map((searchItems, index) => (
                 <SearchItem key={searchItems.id} searchItems={searchItems} index={index}/>
             ))}

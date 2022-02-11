@@ -3,12 +3,14 @@ import IconButton from "./IconButton";
 import useSpotify from "../hooks/useSpotify";
 import {useRecoilState} from "recoil";
 import {formIdState, formState} from "../atoms/formAtom";
+import {artistId} from "../atoms/artistAtom";
 
 const Form = () => {
     const spotifyApi = useSpotify()
     const [search, setSearch] = useRecoilState(formState)
     const [value, setValue] = useRecoilState(formIdState)
-    // console.log(search)
+    const [artist, setArtist] = useRecoilState(artistId)
+    // console.log(artist)
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {
@@ -17,6 +19,7 @@ const Form = () => {
                     .then(
                         (data) => {
                             setSearch(data.body)
+                            setArtist(data.body.tracks.items[0]?.artists[0].id)
                         },
                         (err) => {
                             console.error(err)
