@@ -1,7 +1,7 @@
 import {signOut, useSession} from "next-auth/react";
 import {ChevronDownIcon} from "@heroicons/react/outline";
 import {useRecoilState, useRecoilValue} from "recoil";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {trackIdState, trackState} from "../atoms/trackAtom";
 import useSpotify from "../hooks/useSpotify";
 import {Images} from "./Images";

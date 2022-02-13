@@ -69,7 +69,7 @@ function Center() {
                 <Songs/>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Center;

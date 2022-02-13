@@ -10,7 +10,6 @@ const Form = () => {
     const [search, setSearch] = useRecoilState(formState)
     const [value, setValue] = useRecoilState(formIdState)
     const [artist, setArtist] = useRecoilState(artistId)
-    // console.log(artist)
 
     useEffect(() => {
         if (spotifyApi.getAccessToken()) {

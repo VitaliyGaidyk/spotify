@@ -26,14 +26,15 @@ const Player = () => {
 
     const fetchCurrentSong = () => {
         if (!songInfo) {
-            spotifyApi.getMyCurrentPlayingTrack().then(data => {
-                console.log('now playing', data.body?.item)
-                setCurrentTrackId(data.body?.item?.id)
+            spotifyApi.getMyCurrentPlayingTrack()
+                .then(data => {
+                    // console.log('now playing', data.body?.item)
+                    setCurrentTrackId(data.body?.item?.id)
 
-                spotifyApi.getMyCurrentPlaybackState().then((data) => {
-                    setIsPlaying(data.body?.is_playing)
+                    spotifyApi.getMyCurrentPlaybackState().then((data) => {
+                        setIsPlaying(data.body?.is_playing)
+                    })
                 })
-            })
         }
     }
 

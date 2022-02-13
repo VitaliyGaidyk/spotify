@@ -5,7 +5,7 @@ import {currentTrackIdState, isPlayingState} from "../atoms/songAtom";
 
 const Song = ({order, track}) => {
     const spotifyApi = useSpotify()
-    const [currentIdTrack, setCurrentIdTrack ] = useRecoilState(currentTrackIdState)
+    const [currentIdTrack, setCurrentIdTrack] = useRecoilState(currentTrackIdState)
     const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
 
     const playSong = () => {
@@ -18,7 +18,7 @@ const Song = ({order, track}) => {
 
     return (
         <div className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900'
-        onClick={playSong}
+             onClick={playSong}
         >
             <div className="flex items-center space-x-4 rounded-lg cursor-pointer">
                 <p>
