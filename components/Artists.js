@@ -1,33 +1,10 @@
-import {useEffect, useState} from "react";
-import useSpotify from "../hooks/useSpotify";
-import {useSession} from "next-auth/react";
-import {useRecoilValue} from "recoil";
-import {artistId} from "../atoms/artistAtom";
 import Artist from "./Artist";
+import useArtist from "../hooks/useArtist";
+import UseArtistRelated from "../hooks/useArtistRelated";
 
 const Artists = () => {
-    const spotifyApi = useSpotify()
-    const {data: session} = useSession()
-    const [artist, setArtist] = useState('')
-    const artistNumber = useRecoilValue(artistId)
-
-    useEffect(() => {
-        if (spotifyApi.getAccessToken()) {
-            if (artistNumber) {
-                spotifyApi.getArtist(artistNumber)
-                    .then(
-                        (data) => {
-                            setArtist(data.body)
-                        },
-                        (err) => {
-                            console.log(err)
-                        }
-                    )
-            } else {
-                setArtist('')
-            }
-        }
-    }, [spotifyApi, session, artistNumber])
+    const artist = useArtist()
+    const useArtistRelated = UseArtistRelated()
 
     return (
         <>
@@ -40,6 +17,7 @@ const Artists = () => {
                     <Artist artist={artist}/>
                 </div>
             </div>
+
         </>
     )
 }
